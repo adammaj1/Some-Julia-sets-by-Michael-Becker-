@@ -5,10 +5,17 @@
 
 
 
+# original images
 
+![](./images/z6-z.png "description")   
 
+![](./images/z7-z.png "description")   
 
+![](./images/z10-z.png "description")   
 
+![](./images/z14-z.png "description")   
+
+![](./images/z15-z.png "description")   
 
 
 
