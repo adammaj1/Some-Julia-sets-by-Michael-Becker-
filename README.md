@@ -2,10 +2,10 @@
 
 
 
+[Some Julia sets by Michael Becker, 8/2003](https://web.archive.org/web/20161024132306/http://www.ijon.de/mathe/julia/index.html)
 
 
-
-# original images
+ original images
 
 ![](./images/z6-z.png "description")   
 
@@ -18,7 +18,7 @@
 ![](./images/z15-z.png "description")   
 
 
-
+[code](./src/2005) under GNU GPL licence
 
 
 
