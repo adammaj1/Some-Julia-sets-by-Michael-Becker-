@@ -33,6 +33,8 @@ See also :
 # compiling
 
 ## Ubuntu 20.10
+Short description : compilation failed   
+
 
 ```
  make
@@ -58,6 +60,8 @@ Install  -dev package containing glib.h:
 ```bash
 sudo apt-get install libglib2.0-dev
 ```
+
+
 
 
 
