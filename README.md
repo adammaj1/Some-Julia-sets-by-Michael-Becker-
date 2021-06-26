@@ -5,17 +5,21 @@
 [Some Julia sets by Michael Becker, 8/2003](https://web.archive.org/web/20161024132306/http://www.ijon.de/mathe/julia/index.html)
 
 
- original images
 
-![](./images/z6-z.png "description")   
 
-![](./images/z7-z.png "description")   
+#  original images z^n - z
 
-![](./images/z10-z.png "description")   
+## n is even 
+![](./images/z6-z.png "z^6-z")   
 
-![](./images/z14-z.png "description")   
+![](./images/z10-z.png "z^10-z")   
 
-![](./images/z15-z.png "description")   
+![](./images/z14-z.png "z^14-z")   
+
+## n is odd 
+![](./images/z7-z.png "z^7-z")   
+
+![](./images/z15-z.png "z^15-z")   
 
 
 [code](./src/2005) under [GNU GPL licence](http://gnugpl.org/)
