@@ -18,7 +18,7 @@
 ![](./images/z15-z.png "description")   
 
 
-[code](./src/2005) under GNU GPL licence
+[code](./src/2005) under [GNU GPL licence](http://gnugpl.org/)
 
 
 
