@@ -67,6 +67,70 @@ sudo apt-get install libglib2.0-dev
 ```
 
 
+## instal glib1.2
+
+```
+sh
+./configure
+creating cache ./config.cache
+checking for a BSD compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking whether make sets ${MAKE}... yes
+checking for working aclocal... found
+checking for working autoconf... found
+checking for working automake... found
+checking for working autoheader... found
+checking for working makeinfo... missing
+checking host system type... Invalid configuration `x86_64-unknown-linux-gnu': machine `x86_64-unknown' not recognized
+
+checking build system type... Invalid configuration `x86_64-unknown-linux-gnu': machine `x86_64-unknown' not recognized
+
+checking for ranlib... ranlib
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking command to parse /usr/bin/nm -B output... yes
+checking for _ prefix in compiled symbols... no
+checking whether ln -s works... yes
+ltconfig: you must specify a host type if you use `--no-verify'
+Try `ltconfig --help' for more information.
+configure: error: libtool configure failed
+```
+
+solution: 
+
+
+  ./configure --build=i386-linux-gnu --host=i386-linux-gnu 
+  
+  
+then 
+
+  make
+  
+  
+``` 
+   | ^~~~~~~~~~~~~~~~~
+gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib -g -O2 -Wall -D_REENTRANT -c gtree.c -o gtree.o >/dev/null 2>&1
+/bin/sh ./libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib     -g -O2 -Wall  -D_REENTRANT -c gutils.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib -g -O2 -Wall -D_REENTRANT -c -fPIC -DPIC gutils.c -o gutils.lo
+gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib -g -O2 -Wall -D_REENTRANT -c gutils.c -o gutils.o >/dev/null 2>&1
+/bin/sh ./libtool --mode=link gcc  -g -O2 -Wall  -D_REENTRANT  -o libglib.la -rpath /usr/local/lib -version-info 0:0:0 	-release 1.2 garray.lo gcache.lo gcompletion.lo gdataset.lo gdate.lo gerror.lo ghash.lo ghook.lo giochannel.lo giounix.lo glist.lo gmain.lo gmem.lo gmessages.lo gmutex.lo gnode.lo gprimes.lo grel.lo gscanner.lo gslist.lo gstrfuncs.lo gstring.lo gtimer.lo gtree.lo gutils.lo  
+mkdir .libs
+
+*** Warning: This library needs some functionality provided by -lc.
+*** I have the capability to make that library automatically link in when
+*** you link to this library.  But I can only do this if you have a
+*** shared version of the library, which you do not appear to have.
+```
+
+also failed
+
+
 
 
 
