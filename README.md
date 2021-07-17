@@ -35,9 +35,12 @@ See also new not original code and images:
 * [b015.png - original image](https://web.archive.org/web/20160504150529im_/http://www.ijon.de/mathe/julia/sets/b015.png) and [the same image with the src code in commons ]( https://commons.wikimedia.org/wiki/File:Julia_set_for_f(z)%3D_z%5E14-z.png#%7B%7Bint%3Afiledesc%7D%7D)
 
 
-# compiling original code
+# compiling original code on Ubuntu 21.04
 
-## Ubuntu 20.10
+[dependecies](/src/Makefile)
+* glib-1.2 
+* gtk-1.2 
+
 Short description : compilation failed   
 
 
@@ -53,85 +56,34 @@ compilation terminated.
 make: *** [makefile:16: imagearea.o] Error 1
 ```
 
-Solutio:
-
-Find file glib.h in:
-* [packages](https://packages.ubuntu.com/search?suite=bionic&arch=any&mode=exactfilename&searchon=contents&keywords=glib.h)
-* disk
 
 
-Install  -dev package containing glib.h:
+## glib1.2
 
-```bash
-sudo apt-get install libglib2.0-dev
+[how-to-install-glib-1-2-on-new-system](https://unix.stackexchange.com/questions/658788/how-to-install-glib-1-2-on-new-system)
+* don't build
+* use packages built for old Ubuntu 
+  * download deb packages: [libglib1.2_1.2.10-17build1_i386.deb](http://old-releases.ubuntu.com/ubuntu/pool/main/g/glib1.2/libglib1.2_1.2.10-17build1_i386.deb) and [libglib1.2-dev_1.2.10-17build1_i386.deb](http://old-releases.ubuntu.com/ubuntu/pool/main/g/glib1.2/libglib1.2-dev_1.2.10-17build1_i386.deb)
+  * install using: apt install
+
+```
+sudo apt install ./libglib1.2_1.2.10-17build1_i386.deb
+sudo apt install ./libglib1.2-dev_1.2.10-17build1_i386.deb
 ```
 
 
-## instal glib1.2
+After that next try to compile the program
 
 ```
-sh
-./configure
-creating cache ./config.cache
-checking for a BSD compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking whether make sets ${MAKE}... yes
-checking for working aclocal... found
-checking for working autoconf... found
-checking for working automake... found
-checking for working autoheader... found
-checking for working makeinfo... missing
-checking host system type... Invalid configuration `x86_64-unknown-linux-gnu': machine `x86_64-unknown' not recognized
-
-checking build system type... Invalid configuration `x86_64-unknown-linux-gnu': machine `x86_64-unknown' not recognized
-
-checking for ranlib... ranlib
-checking for gcc... gcc
-checking whether the C compiler (gcc  ) works... yes
-checking whether the C compiler (gcc  ) is a cross-compiler... no
-checking whether we are using GNU C... yes
-checking whether gcc accepts -g... yes
-checking for ld used by GCC... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for BSD-compatible nm... /usr/bin/nm -B
-checking command to parse /usr/bin/nm -B output... yes
-checking for _ prefix in compiled symbols... no
-checking whether ln -s works... yes
-ltconfig: you must specify a host type if you use `--no-verify'
-Try `ltconfig --help' for more information.
-configure: error: libtool configure failed
+make
+cc -ansi -Wall -g -I /usr/include/glib-1.2 -I /usr/include/gtk-1.2 -I /usr/lib/glib/include  -c julia2.c
+julia2.c:8:10: fatal error: gtk/gtk.h: Nie ma takiego pliku ani katalogu
+    8 | #include <gtk/gtk.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+make: *** [makefile:16: julia2.o] Błąd 1
 ```
-
-solution: 
-
-
-  ./configure --build=i386-linux-gnu --host=i386-linux-gnu 
-  
-  
-then 
-
-  make
-  
-  
-``` 
-   | ^~~~~~~~~~~~~~~~~
-gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib -g -O2 -Wall -D_REENTRANT -c gtree.c -o gtree.o >/dev/null 2>&1
-/bin/sh ./libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib     -g -O2 -Wall  -D_REENTRANT -c gutils.c
-gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib -g -O2 -Wall -D_REENTRANT -c -fPIC -DPIC gutils.c -o gutils.lo
-gcc -DHAVE_CONFIG_H -I. -I. -I. -DG_LOG_DOMAIN=g_log_domain_glib -g -O2 -Wall -D_REENTRANT -c gutils.c -o gutils.o >/dev/null 2>&1
-/bin/sh ./libtool --mode=link gcc  -g -O2 -Wall  -D_REENTRANT  -o libglib.la -rpath /usr/local/lib -version-info 0:0:0 	-release 1.2 garray.lo gcache.lo gcompletion.lo gdataset.lo gdate.lo gerror.lo ghash.lo ghook.lo giochannel.lo giounix.lo glist.lo gmain.lo gmem.lo gmessages.lo gmutex.lo gnode.lo gprimes.lo grel.lo gscanner.lo gslist.lo gstrfuncs.lo gstring.lo gtimer.lo gtree.lo gutils.lo  
-mkdir .libs
-
-*** Warning: This library needs some functionality provided by -lc.
-*** I have the capability to make that library automatically link in when
-*** you link to this library.  But I can only do this if you have a
-*** shared version of the library, which you do not appear to have.
-```
-
-also failed
-
-
-
+Now it lacks gtk, not glib
 
 
 
