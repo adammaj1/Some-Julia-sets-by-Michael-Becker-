@@ -37,11 +37,8 @@ See also new not original code and images:
 
 # compiling original code on Ubuntu 21.04
 
-[dependecies](/src/Makefile)
-* glib-1.2 
-* gtk-1.2 
 
-Short description : compilation failed   
+Simple compilation failed   
 
 
 ```
@@ -58,10 +55,22 @@ make: *** [makefile:16: imagearea.o] Error 1
 
 Help
 * [unix.stackexchange: how-to-install-gtk-1-2-on-new-system](https://unix.stackexchange.com/questions/658860/how-to-install-gtk-1-2-on-new-system)
-* packages from [/debian-archive/debian/pool/main/g](http://archive.debian.org/debian-archive/debian/pool/main/g/)
 * [GTK v1.2 Tutorial by Tony Gale and Ian Main ](https://www.mit.edu/afs.new/sipb/project/gtk/gtk_v1.2/tutorial/html/gtk_tut.html#toc23)
 * [GTK+ version 1.2.10. GTK+](https://github.com/dimkr/gtk)
+
+
 ## dependencies
+[libraries](/src/Makefile)  
+* glib-1.2 
+* gtk-1.2 
+
+
+Packages
+* packages from [/debian-archive/debian/pool/main/g](http://archive.debian.org/debian-archive/debian/pool/main/g/)
+
+Result :  
+
+
 ```bash
 ldd ./julia2 
 	linux-vdso.so.1 (0x00007ffdb04ee000)
