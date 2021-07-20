@@ -35,7 +35,7 @@ See also new not original code and images:
 * [b015.png - original image](https://web.archive.org/web/20160504150529im_/http://www.ijon.de/mathe/julia/sets/b015.png) and [the same image with the src code in commons ]( https://commons.wikimedia.org/wiki/File:Julia_set_for_f(z)%3D_z%5E14-z.png#%7B%7Bint%3Afiledesc%7D%7D)
 
 
-# compiling original code on Ubuntu 21.04
+# compiling and running original code on Ubuntu 21.04
 
 
 Simple compilation failed   
@@ -55,17 +55,38 @@ make: *** [makefile:16: imagearea.o] Error 1
 
 Help
 * [unix.stackexchange: how-to-install-gtk-1-2-on-new-system](https://unix.stackexchange.com/questions/658860/how-to-install-gtk-1-2-on-new-system)
+* [multilib-and-multiarch](https://unix.stackexchange.com/questions/458069/multilib-and-multiarch)
+  * [ubuntu: MultiArch](https://help.ubuntu.com/community/MultiArch) and [MultiarchSpec](https://wiki.ubuntu.com/MultiarchSpec)
+  * [debian Multiarch](https://wiki.debian.org/Multiarch/)
+  * [stackoverflow: force-gcc-to-compile-32-bit-programs-on-64-bit-platform](https://stackoverflow.com/questions/3501878/force-gcc-to-compile-32-bit-programs-on-64-bit-platform)
 * [GTK v1.2 Tutorial by Tony Gale and Ian Main ](https://www.mit.edu/afs.new/sipb/project/gtk/gtk_v1.2/tutorial/html/gtk_tut.html#toc23)
 * [GTK+ version 1.2.10. GTK+](https://github.com/dimkr/gtk)
 
 
 ## dependencies
+
+
+
+
+[Hardware architecture supported by Ubuntu and it's Ubuntu Designation](https://help.ubuntu.com/lts/installation-guide/armhf/ch02s01.html)
+* Intel x86-based (32 bit) = i386 
+* AMD64 & Intel 64 (64 bit) = amd64 
+* ARM with hardware FPU	= armhf	
+* 64bit ARM = arm64
+* IBM POWER Systems = ppc64el 
+* IBM z/Architecture = armhf
+
+OS
+* [stackoverflow: how-to-determine-whether-a-given-linux-is-32-bit-or-64-bit](https://stackoverflow.com/questions/246007/how-to-determine-whether-a-given-linux-is-32-bit-or-64-bit)
+* [Linux (software) architecture : kernel/shell/applications](https://www.tutorialspoint.com/operating_system/os_linux.htm)
+
 [libraries](/src/Makefile)  
 * glib-1.2 
 * gtk-1.2 
 
 
 Packages
+* ["you might find it easier to install the amd64 versions instead of the i386 versions; that would avoid the hassle of dealing with the -common package on both architectures." Stephen Kitt](https://unix.stackexchange.com/questions/658860/how-to-install-gtk-1-2-on-new-system)
 * packages from [/debian-archive/debian/pool/main/g](http://archive.debian.org/debian-archive/debian/pool/main/g/)
 
 Result :  
