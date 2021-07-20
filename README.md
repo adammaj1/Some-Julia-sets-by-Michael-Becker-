@@ -59,6 +59,7 @@ make: *** [makefile:16: imagearea.o] Error 1
 Help
 * [unix.stackexchange: how-to-install-gtk-1-2-on-new-system](https://unix.stackexchange.com/questions/658860/how-to-install-gtk-1-2-on-new-system)
 * packages from [/debian-archive/debian/pool/main/g](http://archive.debian.org/debian-archive/debian/pool/main/g/)
+* [GTK v1.2 Tutorial by Tony Gale and Ian Main ](https://www.mit.edu/afs.new/sipb/project/gtk/gtk_v1.2/tutorial/html/gtk_tut.html#toc23)
 
 ## dependencies
 ```bash
