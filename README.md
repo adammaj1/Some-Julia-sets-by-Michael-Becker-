@@ -56,35 +56,31 @@ compilation terminated.
 make: *** [makefile:16: imagearea.o] Error 1
 ```
 
+Help
+* [unix.stackexchange: how-to-install-gtk-1-2-on-new-system](https://unix.stackexchange.com/questions/658860/how-to-install-gtk-1-2-on-new-system)
+* packages from [/debian-archive/debian/pool/main/g](http://archive.debian.org/debian-archive/debian/pool/main/g/)
 
-
-## glib1.2
-
-[how-to-install-glib-1-2-on-new-system](https://unix.stackexchange.com/questions/658788/how-to-install-glib-1-2-on-new-system)
-* don't build
-* use packages built for old Ubuntu 
-  * download deb packages: [libglib1.2_1.2.10-17build1_i386.deb](http://old-releases.ubuntu.com/ubuntu/pool/main/g/glib1.2/libglib1.2_1.2.10-17build1_i386.deb) and [libglib1.2-dev_1.2.10-17build1_i386.deb](http://old-releases.ubuntu.com/ubuntu/pool/main/g/glib1.2/libglib1.2-dev_1.2.10-17build1_i386.deb)
-  * install using: apt install
-
+## dependencies
+```bash
+ldd ./julia2 
+	linux-vdso.so.1 (0x00007ffdb04ee000)
+	libgtk-1.2.so.0 => /lib/libgtk-1.2.so.0 (0x00007f003fd81000)
+	libgdk-1.2.so.0 => /lib/libgdk-1.2.so.0 (0x00007f003fb43000)
+	libglib-1.2.so.0 => /lib/libglib-1.2.so.0 (0x00007f003f918000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f003f7ca000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f003f5de000)
+	libgmodule-1.2.so.0 => /lib/libgmodule-1.2.so.0 (0x00007f003f3dc000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f003f3d3000)
+	libXi.so.6 => /lib/x86_64-linux-gnu/libXi.so.6 (0x00007f003f3c1000)
+	libXext.so.6 => /lib/x86_64-linux-gnu/libXext.so.6 (0x00007f003f3ac000)
+	libX11.so.6 => /lib/x86_64-linux-gnu/libX11.so.6 (0x00007f003f26e000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f004010e000)
+	libxcb.so.1 => /lib/x86_64-linux-gnu/libxcb.so.1 (0x00007f003f244000)
+	libXau.so.6 => /lib/x86_64-linux-gnu/libXau.so.6 (0x00007f003f23c000)
+	libXdmcp.so.6 => /lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007f003f234000)
+	libbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x00007f003f21c000)
+	libmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x00007f003f20f000)
 ```
-sudo apt install ./libglib1.2_1.2.10-17build1_i386.deb
-sudo apt install ./libglib1.2-dev_1.2.10-17build1_i386.deb
-```
-
-
-After that next try to compile the program
-
-```
-make
-cc -ansi -Wall -g -I /usr/include/glib-1.2 -I /usr/include/gtk-1.2 -I /usr/lib/glib/include  -c julia2.c
-julia2.c:8:10: fatal error: gtk/gtk.h: Nie ma takiego pliku ani katalogu
-    8 | #include <gtk/gtk.h>
-      |          ^~~~~~~~~~~
-compilation terminated.
-make: *** [makefile:16: julia2.o] Błąd 1
-```
-Now it lacks gtk, not glib
-
 
 
 
