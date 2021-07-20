@@ -89,6 +89,14 @@ Packages
 * ["you might find it easier to install the amd64 versions instead of the i386 versions; that would avoid the hassle of dealing with the -common package on both architectures." Stephen Kitt](https://unix.stackexchange.com/questions/658860/how-to-install-gtk-1-2-on-new-system)
 * packages from [/debian-archive/debian/pool/main/g](http://archive.debian.org/debian-archive/debian/pool/main/g/)
 
+
+```bash
+sudo apt install ./libglib1.2ldbl_1.2.10-19_amd64.deb
+sudo apt install ./libgtk1.2_1.2.10-18.1_amd64.deb
+```
+
+
+
 Result :  
 
 
