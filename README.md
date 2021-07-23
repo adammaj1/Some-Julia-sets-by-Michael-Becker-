@@ -33,13 +33,9 @@
   * [b015.png - original image](https://web.archive.org/web/20160504150529im_/http://www.ijon.de/mathe/julia/sets/b015.png) and [the same image with the src code in commons ]( https://commons.wikimedia.org/wiki/File:Julia_set_for_f(z)%3D_z%5E14-z.png#%7B%7Bint%3Afiledesc%7D%7D)
 
 
-## compiling and running 
-
-### original code on Ubuntu 21.04
-
-[compile and run ](/doc/INSTALL.md)
-
-### modified code 
+## compiling and running on Ubuntu 21.04
+* [original code](/doc/INSTALL.md)
+* modified code 
 
 ```
 make
